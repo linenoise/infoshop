@@ -1,0 +1,29 @@
+<div class="archive">
+	<% thumbnail_file = '/images/thumbnails/' + @archive.attributes[:filename].split(/\//)[-1].gsub(/\.pdf/,'') + '.png' %>
+  <a href="<%= @archive.attributes[:content_filename].gsub(/^content/,'') %>">
+		<% if File.exists?("content#{thumbnail_file}")%>
+		<img src="<%= thumbnail_file %>" alt="test thumbnail" />
+		<% else %>
+		<img src="/images/no_thumbnail_available.png" alt="test thumbnail" />
+		<% end %>
+	</a>
+
+	<div class="clearfix">
+	  <div class="title"><%= @archive.attributes[:title] %></div>
+	  <div class="published">Published in <%= @archive.attributes[:published_on] %> by <%= @archive.attributes[:authors] %> <% if @archive.attributes[:publisher] %>through <%= @archive.attributes[:publisher] %><% end %></div>
+	  <div class="blurb">
+	    <a href="<%= @archive.attributes[:content_filename].gsub(/^content/,'') %>">Download</a>
+	    <p><%= @archive.attributes[:blurb] %></p>
+	  </p>
+	  </div> 
+	  <div class="tags">Topics:
+	    <%= @archive.attributes[:topics].split(', ').map {|topic| "<a href=\"/topics/#{topic}/\">#{topic}</a>"}.join(', ') %>
+	  </div>
+
+	  <% if @archive.attributes[:license] %>
+	    <div class="tags">License: <%= @archive.attributes[:license] %></div>
+	  <% end %>
+  </div>
+
+</div>
+

@@ -1,0 +1,13 @@
+--- 
+title: Donations
+---
+
+<h1>Donations</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus lorem, eleifend ut ornare a, lobortis nec sapien. Quisque felis dui, cursus ac tincidunt quis, interdum tincidunt tellus. Suspendisse ut libero arcu. Praesent mi eros, ultrices ut egestas ut, tincidunt posuere leo. Duis fringilla iaculis leo, ut bibendum erat adipiscing in. Phasellus at nulla arcu, a dictum mi. Donec vitae orci vitae tortor dignissim placerat.</p>
+
+<% if @config[:bitcoin_address] %>
+<p style="text-align: center"><img src="/images/bitcoinacceptedhere.png" alt="Bitcoin Accepted Here" /></p>
+
+<p style="text-align: center">To make a donation, please send bitcoins to:<br /><span style="font-weight:bold"><%= @config[:bitcoin_address] %></span></p>
+<% end %>

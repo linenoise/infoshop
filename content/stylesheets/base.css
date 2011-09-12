@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, Palatino, Times, 'Times New Roman', serif;
+  font-size: 11pt;
+}
+
+body {
+  background: #fff;
+}
+
+a:link, a:visited {
+  color: #A00;
+}
+
+a:hover {
+  color: #A50;
+}
+
+
+/* MAIN BODY AREA */
+
+#main {
+  position: absolute;
+
+  top: 0px;
+  left: 250px;
+
+  width: 710px;
+  padding-top: 20px;
+}
+
+#main h1 {
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 2em;
+  letter-spacing: -1px;
+}
+
+#main h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.6em;
+  letter-spacing: -1px;
+  margin-top: 1em;
+}
+
+#main p {
+  margin: 20px 0;
+  line-height: 20px;
+}
+
+#main ul, #main ol {
+  margin: 20px 20px 20px 50px;
+}
+
+#main .collection {
+  background-color: #CCF;
+  margin: 0px 100px;
+  padding: 0.5em;
+	border: 1px solid #999;
+	min-height: 60px;
+}
+
+#main .collection img {
+  float: left;
+  margin-right: 0.5em;
+}
+
+#main .collection span.title {
+  font-weight: bold;
+  display: block;
+  padding: 0em 0.25em 0.25em 0em;
+  font-size: 1.2em;
+}
+
+
+#main .archive {
+  background-color: #DDD;
+  margin: 20px 30px 20px 30px;
+  padding: 0.5em;
+  border: 1px solid #999;
+  min-height: 208px;
+}
+
+#main .archive img {
+  float: left;
+  margin-right: 0.5em;
+  padding: 2px;
+  border: 2px solid #A00;
+}
+
+#main .archive img:hover {
+  border: 2px solid #A50;
+}
+
+
+#main .archive .title {
+  font-weight: bold;
+}
+
+#main .archive .published {
+  font-style: oblique;
+}
+
+#main .archive .tags {
+  display: block;
+  text-align: right;
+}
+
+.clearfix:after {
+ visibility: hidden;
+ display: block;
+ font-size: 0;
+ content: " ";
+ clear: both;
+ height: 0;
+}
+ 
+.clearfix {display: inline-block;}
+ 
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* SIDEBAR */
+
+#sidebar a {
+  text-decoration: none;
+}
+
+#sidebar {
+  position: absolute;
+
+  top: 0px;
+  left: 0px;
+  width: 180px;
+
+  padding: 20px;
+
+  border-right: 1px solid #ccc;
+  background: #ddd;
+  
+}
+
+#sidebar img.logo {
+  margin: 0px;
+  padding: 5px 18px;
+  border: 2px dashed #999;
+}
+
+#sidebar h2 {
+  text-transform: uppercase;
+  font-size: 14pt;
+  color: #333;
+  letter-spacing: 1px;
+  line-height: 20px;
+  border-bottom: 1px solid #999;
+  margin: 30px 0px 0px 0px;
+}
+
+#sidebar ul, #sidebar p, #sidebar dl {
+  margin: 20px 0px 0px 0px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+}
+
+#sidebar li {
+  font-size: 14px;
+}
+
+#sidebar ul.starred li{
+  padding-left: 20px;
+  background-image: url(/images/black_star.png);
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+}
+
+#sidebar dt {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+#sidebar dd input {
+  font-size: 9pt;
+  width: 170px;
+}
+
+#sidebar #languages{
+	list-style:none;
+	font-weight:bold;
+	margin-bottom:1em;
+	float:left;
+}
+
+#sidebar #languages li{
+	float:left;
+	margin-right:10px;
+	position:relative;
+}
+
+#sidebar #languages span{
+	display:block;
+	text-decoration:none;
+	width:156px;
+	padding: 5px 10px;
+	border: 1px solid #999;
+  background-color: #CCC;
+  background-image: url(/images/down_triangle.png);
+  background-repeat: no-repeat;
+  background-position: 145px 55px;
+}
+
+#sidebar #languages a:hover{
+	color:#fff;
+	background:#6b0c36;
+	text-decoration:underline;
+}
+
+#sidebar #languages ul{
+  margin: 0px;
+	background:#ccc; 
+	background:rgba(192,192,192,0);
+	list-style:none;
+	position:absolute;
+	left:-9999px; 
+  width: 179px;
+	border-bottom: 1px solid #999;
+}
+
+#sidebar #languages ul li{
+	float:none;
+}
+
+#sidebar #languages ul a{
+	white-space:nowrap; 
+  display: block;
+	width:156px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	padding: 5px 10px;
+  background-color: #CCC;
+}
+
+#sidebar #languages li:hover ul{ 
+	left:0; 
+}
+
+#sidebar #languages li:hover a{ 
+	background:#CCC;
+	text-decoration:underline;
+}
+
+#sidebar #languages li:hover ul a{ 
+	text-decoration:none;
+}
+
+#sidebar #languages li:hover ul li a:hover{ 
+	background:#333;
+}
+
+
+

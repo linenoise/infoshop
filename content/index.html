@@ -1,0 +1,37 @@
+--- 
+title: Welcome
+---
+
+<h1>Welcome</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla risus lorem, eleifend ut ornare a, lobortis nec sapien. Quisque felis dui, cursus ac tincidunt quis, interdum tincidunt tellus. Suspendisse ut libero arcu. Praesent mi eros, ultrices ut egestas ut, tincidunt posuere leo. Duis fringilla iaculis leo, ut bibendum erat adipiscing in. Phasellus at nulla arcu, a dictum mi. Donec vitae orci vitae tortor dignissim placerat.</p>
+ 
+<%= render '_collection', :collection => items.select{|i| i.identifier =~ /\/collections.+/}[0] %>
+
+<h2>Here is a bulleted list</h2>
+<p>
+  <ul>
+   <li><strong>Lorem ipsum dolor sit amet</strong> consectetur adipiscing elit. Nulla risus lorem, eleifend ut ornare a, lobortis nec sapien.</li>
+    <li><strong>Nulla risus lorem</strong>eleifend ut ornare a, lobortis nec sapien. Quisque felis dui, cursus ac tincidunt quis, interdum tincidunt tellus.</li>
+    <li><strong>Suspendisse ut libero</strong> praesent mi eros, ultrices ut egestas ut, tincidunt posuere leo. Duis fringilla iaculis leo, ut bibendum erat adipiscing in.</li>
+  </ul>
+</p>
+
+<h2>New Content</h2>
+
+<% items.select{|i| i.identifier =~ /\/archives\/.+/}.sort{|a,b| b.attributes[:added_on] <=> a.attributes[:added_on]}[0..2].each do |file| %>
+  <%= render '_archive', :archive => file %>
+<% end %> 
+
+
+<h2>Submissions</h2>
+
+<p>Fusce sed sagittis libero. Integer ultrices metus sed magna fringilla id tempor elit semper:</p>
+
+<ul>
+  <li>Sed tincidunt pellentesque ornare.</li>
+  <li>Nulla pharetra placerat erat nec vestibulum.</li>
+  <li>Nam id suscipit dolor.</li>
+</ul>
+
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, <a href="mailto:nascetur@ridiculus.mus">nascetur@ridiculus.mus</a>.</p>

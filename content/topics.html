@@ -1,0 +1,14 @@
+---
+title: Topics
+---
+
+<h1>Topics</h1>
+
+<% items.select{|i| i.identifier =~ /\/topics\/.+/}.sort{|a,b| a.attributes[:title] <=> b.attributes[:title]}.each do |topic| %>
+<p>
+  <a href="<%= topic.identifier %>"><%= topic.attributes[:title] %></a>
+  (<%= count = items.select{|i| i.identifier =~ /\/archives\/.+/}.select{|file| file.attributes[:topics] =~ /#{topic.attributes[:title]}/}.length %>
+  <% if count == 1 %> resource<% else %> resources<% end %>)
+</p>
+<% end %>
+  

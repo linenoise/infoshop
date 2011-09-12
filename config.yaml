@@ -1,0 +1,19 @@
+text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml' ]
+
+output_dir: output
+index_filenames: [ 'index.html' ]
+enable_output_diff: false
+
+data_sources:
+  -
+    type: filesystem_unified
+    items_root: /
+    layouts_root: /
+
+locations:
+  internet: http://url.to.your.infoshop/
+  tor: http://123123123123123.onion/
+  i2p: http://your.infoshop.i2p/
+  freenet: http://your.obscenely.long.freenet.unique.identifier/
+
+bitcoin_address: here_is_where_your_bitcoin_address_goes

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Infoshop - <%= item.attributes[:title] %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/base.css" media="screen">
+  </head>
+  <body>
+    <div id="main">
+    
+      <img src="/images/placekitten.jpeg" alt="A kitten" style="float:right; padding: 0.5em; border: 1px solid #999; margin: 0px 0px 1em 1em;"/>
+      
+      <h1><%= item.attributes[:title] %></h1>
+      
+      <p><%= item.attributes[:blurb] %></p>
+      
+      <% items.select{|i| i.identifier =~ /\/archives\/.+/}.select{|file| file.attributes[:topics] =~ /#{item.attributes[:title]}/}.sort{|a,b| a.attributes[:added_on] <=> b.attributes[:added_on]}.each do |file| %>
+        <%= render '_archive', :archive => file %>
+      <% end %> 
+
+      <p><a href="/topics/">&laquo; Back to all topics</a></p>
+    </div>
+    <%= render '_sidebar' %>
+  </body>
+</html>

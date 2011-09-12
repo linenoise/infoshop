@@ -1,0 +1,63 @@
+    <div id="sidebar">
+      <a href="/"><img src="/images/infoshop_header.png" alt="Infoshop" class="logo"/></a>
+
+      <ul id="languages">
+  		  <li><span><img src="/images/worldmap.png" alt="choose a language" /></span>
+			    <ul>
+				    <li><a href="/languages/ar/" title="japanese">[ar] عربي</a></li>
+						<li><a href="/languages/en/" title="english">[en] English</a></li>
+				    <li><a href="/languages/de/" title="german">[es] Español</a></li>
+				    <li><a href="/languages/ru/" title="russian">[ru] Русский</a></li>
+				    <li><a href="/languages/zh/" title="mandarin">[zh] 官话</a></li>
+			    </ul>
+		    </li>
+	    </ul>
+
+      <h2>Topics</h2>
+      <ul class="starred">
+      	<% items.select{|i| i.identifier =~ /\/topics\/.+/}.select{|topic| topic.attributes[:frontpage] == true}.sort{|a,b| a.attributes[:title] <=> b.attributes[:title]}.each do |topic| %>
+        <li><a href="<%= topic.identifier %>"><%= topic.attributes[:title] %></a></li>
+        <% end %>
+      </ul>
+      <p><a href="/topics/" style="font-weight: bold">See all topics &raquo;</a></p>
+
+      <h2>Support</h2>
+      <% if @config[:bitcoin_address] %>
+      <p><a href="/donations/"><img src="/images/bitcoinacceptedhere.png" alt="Bitcoin Accepted Here" /></p>
+      <% end %>
+      <ul>
+        <li><a href="/donations/">Donations</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+
+      <% if @config[:locations] %>
+      <h2>Locations</h2>
+      <dl>
+        <% if @config[:locations][:internet] %>
+        <dt>Internet</dt>
+          <dd><input type="text" value="<%= @config[:locations][:internet] %>" /></dd>
+        <% end %>
+        
+        <% if @config[:locations][:tor] %>
+        <dt>On Tor</dt>
+          <dd><input type="text" value="<%= @config[:locations][:tor] %>" /></dd>
+        <% end %>
+        
+        <% if @config[:locations][:i2p] %>
+        <dt>On I2P</dt>
+          <dd><input type="text" value="<%= @config[:locations][:i2p] %>" /></dd>
+        <% end %>
+        
+        <% if @config[:locations][:freenet] %>
+        <dt>On Freenet</dt>
+          <dd><input type="text" value="<%= @config[:locations][:freenet] %>" /></dd>
+        <% end %>
+      </dl>
+      <% end %>
+
+      <h2>License</h2>
+      <p style="font-size: 10pt;">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0;margin-bottom: 0.5em" src="/images/cc_by_nc_sa.png" /></a><br />
+        This work is licensed under a <a style="font-size: 10pt" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+      </p>
+    </div>

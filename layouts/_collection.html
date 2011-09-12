@@ -1,0 +1,14 @@
+<div class="collection">
+  <img src="/images/archive_download.png" alt="archive download" />
+  <span class="title"><%= @collection.attributes[:title] %></span>
+  <p><span class="blurb"><%= @collection.attributes[:blurb] %></span></p>
+	<ul>
+	<% @collection.attributes[:archives].each do |filename|%>
+		<li><%= filename %></li>
+	<% end %>
+	</ul>
+  <span class="downloaad"><a href="<%= @collection.attributes[:content_filename].gsub(/^content/,'') %>">Download .ZIP file</a></span>
+  <span class="size">[<%= 
+		File.size(@collection.attributes[:content_filename])/(1024)
+	%> KB]</span>
+</div>

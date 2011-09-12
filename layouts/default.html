@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Infoshop - <%= @item[:title] %></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/base.css" media="screen">
+  </head>
+  <body>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <%= render '_sidebar' %>
+  </body>
+</html>

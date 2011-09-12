@@ -1,0 +1,7 @@
+.bundle
+.DS_Store
+output
+tmp
+content/collections/*.zip
+content/images/thumbnails/*
+content/archives
