@@ -17,3 +17,7 @@ locations:
   freenet: http://your.obscenely.long.freenet.unique.identifier/
 
 bitcoin_address: here_is_where_your_bitcoin_address_goes
+
+deploy:
+    default:
+        infoshop: "your_server.net:/path/to/static_site"
