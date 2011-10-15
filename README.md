@@ -32,56 +32,63 @@ In order to make changes to what's already here, you'll need to spin up the auto
 
 This will watch the `content` and `layout` folders for any changes, build the output on the fly, making them available through a webserver. Point your browser of choice at http://localhost:3000/ to see your changes as you make them.  You'll still want to press F5 or click reload in the browser after each change you make to a content or layout file.
 
-**YAML**
+**Data and Metadata**
 
-...
+All of the data to be published should be in the `content/archives` folder with appropriate metadata.  Each piece of content added to the library needs to be accompanied by a note of YAML metadata.  The filename of the metadata must match the filename of the data itself, save for the .yaml extension on the metadata file rather than whichever extnsion is on the data file.  So, to give metadata to a file called `little brother.pdf`, you'd put something like the following in a file called `little brother.yaml`:
 
-**topics**
+		---
+		title: Little Brother
+		authors: Cory Doctorow
+		published_on: 2011
+		added_on: 2011-07-06
+		topics: Fiction, Hacktivism
+		languages: en
+		blurb: |
+		  Little Brother is an adventure set in a scarily real environment, one in which abuses of government power are overcome by techno-wiardry.  This is one of those rare finds in which the Afterwords and Bibliography contain useful information on counteracting the surveillance culture described in the book itself.
+		license: Creative Commons Attribution-NonCommercial-Sharealike 3.0
+		publisher: craphound.com
+		---
 
-...
+Collections
+-----------
 
-**support**
+If you want to publish resources in a collection, you'll want to create a .yaml file in the `collections` folder containing a description of the collection and a listing of the files contained therein.  That file should look something like this:
 
-...
+		title: Introduction to Freedom
+		blurb: |
+		  This is a collection of the best introductary files on free culture and free people in a free society. If you only download one thing from this infoshop, it should be this.
+			archives:
+			  - Basic Internet Security.pdf
+				- Do It Yourself - A Handbook for Changing our World.pdf
+				- Free Culture.pdf
+				- Little Brother.pdf
+				- The Revolution of Everyday Life.pdf
 
-**languages**
+To display a link to a collection, you'll want to use the collection partial wherever you'd like to embed it:
 
-...
-
+		<%= render '_collection', :collection => items.select{|i| i.identifier =~ /\/collections.+/}[0] %>
 
 Deployment
 ----------
 
-There are a number of mechanisms available for deployment.  First, you'll want to create a full build of your site:
+In order to deploy your site, you'll want to create a full build of your site:
 
 	$ nanoc compile -f
 
-Once infoshop has your site ready in the `output` directory, you can do whatever you like with it.  Generally, you'll upload it to a server via SCP, SFTP, or rsync.  Additionaly, you may publish it to freenet if you have the software installed.  If you're unsure, you probably want SFTP.
-
-**SFTP**
-
-...
-
-**SCP**
-
-...
+Once infoshop has your site ready in the `output` directory, you can do whatever you like with it.  Generally, you'll upload it to a server via SCP, SFTP, or rsync.  Additionaly, you may publish it to freenet if you have the software installed.  
 
 **rsync**
 
+RSync deployment is built into nanoc, the primary driver of this package.  To configure your site for rsync deployment, edit the `config.yml` file's "deploy" stanza near the end.  Once that matches the server and path you'd like to deploy to, run:
+
 	$ rake deploy:rsync
 
-**freenet**
-
-...
-
-
-TODO
-----
+TODO in v.1
+-----------
 
 * Find in project "Lorem Ipsum".  Fill in appropriate content.
 * Find in project "idtrail".  Fill in appropriate content.
-* Fill in maintenance documentation.
-* Fill in deployment documentation.
+* Add configuration instructions for I2P eepsite build
 * Make the language bar behave properly
 * Remove PDF Metadata http://www.marshalgraham.com/2011/04/removing-pdf-metadata-with-pdf-toolkit.html
 * Remove scripts from PDFs http://blog.didierstevens.com/programs/pdf-tools/
@@ -89,7 +96,8 @@ TODO
 * Integrate zip package support (YAML declaration?)
 * Download buttons should be bigger and friendlier
 
-TODO in V.2:
+TODO in v.2
+-----------
 
 * Add Ogg Vorbis support
 * Add Ogg Theora support
