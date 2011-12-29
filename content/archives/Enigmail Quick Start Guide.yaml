@@ -1,0 +1,12 @@
+---
+title: Enigmail Documentation Collection
+authors: Robert J. Hansen, The Enigmail Project
+published_on: 2007
+added_on: 2011-07-06
+topics: Cryptography
+languages: en
+blurb: |
+  Enigmail is a plugin for the Thunderbird email client that allows you to send and receive messages encrypted with GNU Privacy Guard (GPG).  This guide shows you how to set it up.
+license: Creative Commons Attribution 3.0 Unported
+publisher: The Enigmail Project
+---
