@@ -83,25 +83,3 @@ RSync deployment is built into nanoc, the primary driver of this package.  To co
 
 	$ rake deploy:rsync
 
-TODO in v.1
------------
-
-* Find in project "Lorem Ipsum".  Fill in appropriate content.
-* Find in project "idtrail".  Fill in appropriate content.
-* Add configuration instructions for I2P eepsite build
-* Make the language bar behave properly
-* Remove PDF Metadata http://www.marshalgraham.com/2011/04/removing-pdf-metadata-with-pdf-toolkit.html
-* Remove scripts from PDFs http://blog.didierstevens.com/programs/pdf-tools/
-* Integrate PDFTK as a dependency http://www.pdflabs.com/docs/install-pdftk/
-* Integrate zip package support (YAML declaration?)
-* Download buttons should be bigger and friendlier
-
-TODO in v.2
------------
-
-* Add Ogg Vorbis support
-* Add Ogg Theora support
-* Add support for JPEG, GIF, and PNG files
-* Add support for ASCII Text files
-* Add deploy route for Freenet
-* Have collect.rake check contents of existing zip files before recreating (needs a good zip gem)
