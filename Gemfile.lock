@@ -11,7 +11,7 @@ GEM
       colored (>= 1.2)
     kramdown (0.14.2)
     mime-types (1.19)
-    nanoc (3.4.3)
+    nanoc (3.5.0)
       cri (~> 2.2)
     rack (1.2.7)
     rake (10.0.3)
