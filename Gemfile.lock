@@ -1,6 +1,5 @@
 GEM
   remote: http://rubygems.org/
-  remote: http://gemcutter.org/
   specs:
     builder (3.2.2)
     colored (1.2)
@@ -9,9 +8,9 @@ GEM
       colored (~> 1.2)
     kramdown (1.5.0)
     mime-types (2.4.3)
-    nanoc (3.7.3)
+    nanoc (3.7.4)
       cri (~> 2.3)
-    rake (10.3.2)
+    rake (10.4.0)
     rdiscount (2.1.7.1)
 
 PLATFORMS
