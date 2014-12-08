@@ -10,7 +10,7 @@ GEM
     mime-types (2.4.3)
     nanoc (3.7.4)
       cri (~> 2.3)
-    rake (10.4.0)
+    rake (10.4.2)
     rdiscount (2.1.7.1)
 
 PLATFORMS
