@@ -6,7 +6,7 @@ GEM
     colorize (0.7.5)
     cri (2.6.1)
       colored (~> 1.2)
-    kramdown (1.5.0)
+    kramdown (1.6.0)
     mime-types (2.4.3)
     nanoc (3.7.5)
       cri (~> 2.3)
