@@ -6,9 +6,9 @@ GEM
     colorize (0.7.7)
     cri (2.7.0)
       colored (~> 1.2)
-    kramdown (1.8.0)
+    kramdown (1.9.0)
     mime-types (2.6.2)
-    nanoc (3.8.0)
+    nanoc (4.0.0)
       cri (~> 2.3)
     rake (10.4.2)
     rdiscount (2.1.8)
@@ -24,3 +24,6 @@ DEPENDENCIES
   nanoc
   rake
   rdiscount
+
+BUNDLED WITH
+   1.10.6
