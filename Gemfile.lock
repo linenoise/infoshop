@@ -6,13 +6,13 @@ GEM
     colorize (0.7.7)
     cri (2.7.0)
       colored (~> 1.2)
-    kramdown (1.9.0)
+    kramdown (1.10.0)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2015.1120)
-    nanoc (4.1.2)
+    mime-types-data (3.2016.0221)
+    nanoc (4.1.4)
       cri (~> 2.3)
-    rake (10.5.0)
+    rake (11.1.0)
     rdiscount (2.1.8)
 
 PLATFORMS
@@ -28,4 +28,4 @@ DEPENDENCIES
   rdiscount
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
